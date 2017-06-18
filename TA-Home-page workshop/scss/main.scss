@@ -1,0 +1,421 @@
+#NewsSection {
+    background-image: url('Images/news-bottom-bg.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+        height: 0;
+        overflow: hidden;
+    }
+
+    &>ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        &:after {
+            display: block;
+            clear: both;
+            content: "";
+            height: 0;
+            overflow: hidden;
+        }
+        &>li {
+            float: left;
+            margin-right: 20px;
+
+                &>a {
+                display: inline-block;
+                height: 5px;
+                width: 100px;
+                }
+        }
+    }   
+    &>#NewsText {
+        width: 430px;
+        float: left;
+
+        &>h1 {
+            font-size: 40px;
+            font-weight: normal;
+            margin: 10px 0;
+            color: #444;
+        }
+        &>p {
+            font-size: 22px;
+            font-weight: normal;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #6d6d6d;
+        }
+        &>a {
+            text-decoration: none;
+            background-image: url('Images/Backgrounds/news-link-bg.png');
+            background-repeat: repeat-x;
+            color: #fff;
+            font-size: 20px;
+            display: inline-block;
+            padding: 0 25px;
+            line-height: 33px;
+            height: 33px;
+            border-radius: 5px;
+
+            &:hover {
+                 background-image: url('Images/Backgrounds/news-link-bg -hover.png');
+            }
+        }
+    }
+        &>#NewsImage {
+            float: right;
+        }
+}
+$names: First, Second, Third, Fourth, Fifth;
+$bg-list: #f7e0d4, #82b517, #e2d8e6, #dbeaf5, #ffad82;
+
+@each $item in $names {
+      $i: index($names, $item);
+    #NewsLink#{$item} {
+      background-color: nth($bg-list, $i);
+      content: "";
+    }
+}  
+#NewsSlider {
+    font-size: 1em;
+    padding: 0 10px;
+    margin: 10px 0 10px 0;
+    & h1 {
+        font-size: 3em;
+        width: 80%;
+        color: #444444;
+        margin: 20px 0;
+    }
+    & p {
+        font-size: 1.6em !important;
+        color: #6d6d6d;
+        width: 55%;
+        margin-bottom: 5px;
+    }
+    & a {
+        display: inline-block;
+        color: #FFFFFF !important;
+    }
+    & .newsPost {
+        background: url('Images/news-img01.png') 580px -10px no-repeat; /*Regular ninja*/
+        position: relative;
+    }
+    & div.homePageButtons {
+        display: inline-block;
+        width: 74%;
+        margin-bottom: 20px;
+        & .generalButtonStyles {
+            margin: 5px 0px 0 0;
+        }
+    }
+}
+.buttonStyled:hover {
+    text-decoration: none;
+}
+section#NewsSlider ul#socialIcons {
+    display: inline-block;
+    list-style: none;
+    margin-top: 20px;
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+    & li {
+        display: inline-block;
+        & a {
+            display: inline-block;
+            background: url('/Content/Images/social-sprite-icons.png');
+            width: 37px;
+            height: 35px;
+        }
+    }
+}
+#InnerBlocksContainer {
+    width: 998px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 9px;
+}
+#InnerBlocsSortableList {
+    list-style-type: none;
+    padding: 0;
+    & p, #InnerBlocsSortableList span {
+        font-size: 1.3em !important;
+    }
+}
+.sortableInnerBlock {
+    float: left;
+}
+
+.innerBlocks {
+    width: 100%;
+    height: 248px;
+    float: left;
+    background-color: #fafafa;
+    color: #000000;
+    & article {
+    margin: 10px 5px;
+    line-height: 185%;
+    & span {
+        display: block;
+        font-size: 1.3em !important;
+    }
+    & p {
+        font-size: 1.3em !important;
+    }
+    }
+    & h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: bold;
+    }
+    & h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    }
+    & a {
+    color: white !important;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    }
+}
+
+.innerBlocksDouble {
+    width: 625px;
+}
+.innerBlocksHeader {
+    height: 32px;
+    background-repeat: repeat-x;
+    font-size: 20px;
+    color: white !important;
+    text-align: center;
+    cursor: default;
+    padding-top: 5px;
+}
+#BlogPostsHeader {
+    background-color: #82b517;
+}
+#RecentVideoHeader {
+    color: black;
+    background-color: #74b764;
+}
+#RecentVideos {
+    & article {
+    margin-right: 5px;
+    }
+    & img {
+    float: left;
+    width: 75px;
+    height: 56px;
+    margin-right: 10px;
+    border: none;
+    }
+    & .videoDescription {
+        float: left;
+        & span {
+            width: 200px;
+        }
+    }
+}
+#ForumPostsHeader {
+    background-color: #d83c3c;
+    margin-bottom: 5px;
+}
+$tags: span, h3, h4;
+#ForumPosts {
+    & article {
+        margin: 1px 2px;
+        @each $tag in $tags {
+          & #{$tag}{
+            display: inline-block;
+          }
+        }
+
+    }
+    & ul {
+        list-style-type: none;
+    }
+}
+.forumPostTime {
+    color: #be541c;
+    font-size: 12px !important;
+}
+
+.forumPostQuote {
+    color: #000000;
+}
+
+.forumPostTopic {
+    color: #577516;
+    font-size: 13px !important;
+}
+#CoursesHeader {
+    background-color: #5693c7;
+}
+
+#Courses article {
+    height: auto;
+    & a {
+        color: black;
+        margin: 0;
+    }
+    & h3 {
+        margin: 0;
+    }
+    & p {
+        margin: 0;
+    }
+}
+#Calendar {
+    font-size: 1em !important;
+}
+
+#IndexCalendarHeader {
+    background-color: #ed8537;
+}
+
+#IndexCalendarContainer {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 1px;
+    margin-top: 2px;
+}
+.video-item {
+    float: left;
+    text-align: center;
+    width: 217px;
+    margin: 5px !important;
+    &:hover img {
+        opacity: 1;
+    }
+}
+.forum-posts-container {
+    font-size: 0.8em !important;
+}
+
+#IndexFacebookHeader {
+    background-color: #56c7ab;
+}
+
+.k-widget.k-calendar {
+    width: 100%;
+    height: 100%;
+    & .k-content tbody td, th {
+        width: 14%;
+        text-align: left;
+    }
+}
+div.panel {
+    margin-bottom: 0;
+}
+
+.videoBox {
+    height: 213px;
+    overflow: hidden;
+    &:hover img {
+        opacity: 1;
+    }
+}
+.panel-body {
+    padding: 10px;
+}
+
+#IndexCalendarContainer td.k-state-hover {
+    background: #b7d768;
+    background-color: #b7d768;
+}
+
+@media(max-width: 768px) {
+    .forumPostListing {
+        margin-bottom: 5px;
+    }
+    #NewsSlider .newsPost {
+        background: none;
+        & h1 {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 2.4em; 
+        }
+        & p {
+        width: 100%;
+        text-align: justify;
+        }
+        & .homePageButtons {
+        width: 100%;
+        text-align: center;
+        & a {
+            width: 90%;
+            margin-bottom: 10px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        }
+    }
+    .panel-title {
+        text-align: center;
+    }
+    .row .panel .panel-body article {
+        padding: 5px 15px;
+        font-size: 1.3em;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        &:last-of-type {
+            border-bottom: 0;
+        }
+        & strong {
+            text-align: center;
+        }
+        & > span:first-of-type, & time {
+            display: block;
+            content: "";
+        }
+    }
+}
+#IndexCalendarContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    & .k-state-selected {
+        background: none !important;
+    }
+    & .k-state-hover, & .k-other-month.k-state-hover {
+        background: #DDD !important;
+    }
+    & .calendar-event {
+        padding-left: 5px;
+        background-color: lightgray !important;
+        &:hover {
+            background-color: gray !important;
+        }
+        background-color: #fff;
+        color: #000;
+    }
+    & .k-other-month.k-state-hover a {
+        background-image: none !important;
+    }
+    & .k-content .k-link {
+        padding: 0;
+        min-height: 20px;
+    }
+    & .no-event {
+        padding-left: 5px;
+    }
+}
+.k-tooltip-content {
+    font-size: 1.4em;
+}

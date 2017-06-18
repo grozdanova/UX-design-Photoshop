@@ -1,0 +1,1 @@
+#NewsSection{background-image:url(Images/news-bottom-bg.png);background-repeat:no-repeat;background-position:bottom center;padding:20px 30px;margin-bottom:30px}#NewsSection:after,#NewsSection>ul:after{display:block;clear:both;content:"";height:0;overflow:hidden}#NewsSection>ul{list-style-type:none;margin:0;padding:0}
